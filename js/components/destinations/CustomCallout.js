@@ -1,0 +1,61 @@
+var React = require('react');
+var ReactNative = require('react-native');
+var {
+  StyleSheet,
+  View,
+  Text,
+} = ReactNative;
+
+var CustomCallout = React.createClass({
+  render() {
+    return (
+      <View style={[styles.container, this.props.style]}>
+            {this.props.children}
+      </View>
+    );
+  },
+});
+
+var styles = StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    alignSelf: 'flex-start',
+  },
+  bubble: {
+    width: 140,
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    backgroundColor: '#4da2ab',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 6,
+    borderColor: '#007a87',
+    borderWidth: 0.5,
+  },
+  dollar: {
+
+    //color: '#FFFFFF',
+    //fontSize: 10,
+  },
+  amount: {
+    flex: 1,
+  },
+  arrow: {
+    backgroundColor: 'transparent',
+    borderWidth: 16,
+    borderColor: 'transparent',
+    borderTopColor: '#4da2ab',
+    alignSelf: 'center',
+    marginTop: -32,
+  },
+  arrowBorder: {
+    backgroundColor: 'transparent',
+    borderWidth: 16,
+    borderColor: 'transparent',
+    borderTopColor: '#007a87',
+    alignSelf: 'center',
+    marginTop: -0.5,
+  },
+});
+
+module.exports = CustomCallout;
